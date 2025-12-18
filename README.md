@@ -21,6 +21,7 @@ Fournir un feedback visuel sur le succès/échec des commandes précédentes.
 Utilisation des macros de <sys/wait.h> pour analyser le statut du processus enfant.
 WIFEXITED(status) : Si vrai, utilise WEXITSTATUS(status) pour le code de sortie ([exit:0]).
 WIFSIGNALED(status) : Si vrai, utilise WTERMSIG(status) pour le signal.([sign:9] pour SIGKILL)
+ur SIGKILL)
 # Question 5
 Dans cette étape, nous avons implémenté la mesure du temps réel d'exécution de chaque commande ainsi que la récupération du code de retour du processus enfant.
 Utilisation de clock_gettime nous avons utilisé l'horloge CLOCK_MONOTONIC pour mesurer le temps écoulé de manière fiable.
@@ -36,7 +37,7 @@ Pour quitter, tapez 'exit'.
 enseash % date
 Thu Dec 18 02:25:10 PM CET 2025
 enseash [exit:0|2ms] % 
-------------------------------
+********************************
 # Question 6
 L'objectif de cette étape était de permettre au shell d'exécuter des commandes comportant plusieurs arguments.
 Nous avons utilisé la fonction strtok pour séparer la chaîne de caractères saisie par l'utilisateur en plusieurs "tokens" (mots), en utilisant l'espace comme délimiteur.
@@ -54,7 +55,7 @@ In the first place, God made idiots; this was for practice; then he made
 school boards.
 		-- Mark Twain
 enseash [exit:0|19ms] % 
--------------------------------
+***********************************
 # Question 7
 Ici on permet au shell de manipuler les flux de données en utilisant les opérateurs de redirection standards < et >.
 Lors de la tokenisation (découpage de la chaîne), le shell recherche spécifiquement les symboles "<" (redirection d'entrée) et ">" (redirection de sortie).
@@ -74,4 +75,4 @@ enseash % ls > filelist.txt
 enseash [exit:0|5ms] %  wc -l < filelist.txt
 4
 enseash [exit:0|3ms] %
--------------------------------
+***********************************
